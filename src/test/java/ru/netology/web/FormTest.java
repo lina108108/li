@@ -216,7 +216,7 @@ public class FormTest {
         form.$(cssSelector("[role=button]")).click();
         $(".input_type_tel .input__sub").shouldHave(Condition.exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678."));
     }
-    
+
 }
 
 
