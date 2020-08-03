@@ -4,22 +4,17 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-
 import static com.codeborne.selenide.Selenide.*;
 import static org.openqa.selenium.By.cssSelector;
 
     public class FormTest {
         SelenideElement form;
 
-
     @BeforeEach
     void setup() {
         open("http://localhost:9999");
         form = $("[action]");
-
     }
-
 
 
     @Test
@@ -67,7 +62,6 @@ import static org.openqa.selenium.By.cssSelector;
         form.$(cssSelector("[role=button]")).click();
         $(".input_type_text .input__sub").shouldHave(Condition.exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы."));
     }
-
 
     @Test
     void shouldNotSubmitRequestIfNameAndSurname40Letters() {
@@ -191,7 +185,6 @@ import static org.openqa.selenium.By.cssSelector;
         form.$(cssSelector("[role=button]")).click();
         $(".input_type_tel .input__sub").shouldHave(Condition.exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678."));
     }
-
 }
 
 
